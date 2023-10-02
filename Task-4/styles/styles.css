@@ -1,0 +1,553 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* font-families of AmericanTypewriter and  SourceSansPro*/
+@font-face {
+    font-family: 'AmericanTypewriter';
+    src: url('../fonts/AmericanTypewriter.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('../fonts/SourceSansPro.ttf') format('truetype');
+}
+
+/* general styling */
+body {
+    margin: 0 auto;
+    width: 1232px;
+    font-family: 'SourceSansPro', sans-serif;
+
+}
+
+/* create a heading container and use the 
+::after element to create a tilted shape */
+.heading-container {
+    width: 992px;
+    padding: 0px 120px;
+    height: 550px;
+    letter-spacing: 0.50px;
+    background: linear-gradient(to bottom, #20cd5d, #11bc4e);
+    position: relative;
+}
+
+.heading-container::after {
+    content: "";
+    position: absolute;
+    bottom: -90px;
+    left: 0;
+    border-top: 0px solid transparent;
+    border-left: 1232px solid #11bc4e;
+    border-bottom: 100px solid transparent;
+    z-index: -1;
+}
+
+/*A flex header containing the .logo, .header-navbar, .user-account*/
+.header {
+    width: 992px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'AmericanTypewriter', sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 0.70px;
+    text-decoration: none;
+    color: white;
+    flex-grow: 1;
+}
+
+.header-navbar {
+    flex-grow: 5;
+    display: flex;
+    flex-direction: row;
+}
+
+/* contents on the .header-navbar */
+.nav-item {
+    padding-right: 50px;
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+
+}
+
+/* anchor tags of the .user-account <ul>  */
+.account-items a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+}
+
+.user-account {
+    list-style: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.account-items {
+    padding-right: 50px;
+}
+
+/* header tag's signup-button's style */
+.signup-button {
+    padding: 5px 25px;
+    font-family: 'SourceSansPro', sans-serif;
+    font-size: 16px;
+    background-color: #13c251;
+    border: 0.5px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    opacity: 0.7;
+}
+
+.signup-button:hover {
+    background-color: #fff;
+    color: #13c251;
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* heading-section containing title, input field and a button */
+.heading-section {
+    height: 200px;
+    width: 580px;
+    padding-top: 120px;
+    color: #fff;
+}
+
+/* title of the heading section */
+.heading-section-title {
+    font-size: 30px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.input-url {
+    width: 400px;
+    height: 50px;
+    float: left;
+    border: none;
+    outline: none;
+    border-radius: 2px 0px 0px 2px;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #b2b2b2;
+}
+
+.input-url::placeholder {
+    color: #b2b2b2;
+}
+
+.url-submit-button {
+    width: 150px;
+    height: 50px;
+    background-color: #ff7500;
+    border: none;
+    border-radius: 0px 2px 2px 0px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.url-submit-button:hover {
+    color: white;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* sample URL label and values*/
+.sample {
+    margin-top: 10px;
+}
+
+.sample-label {
+    opacity: 0.4;
+}
+
+.sample-values {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.laptop-image {
+    width: 400px;
+    height: 360px;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+}
+
+/* features section styles including title, description, cards*/
+.features {
+    width: 992px;
+    padding: 200px 120px 50px 120px;
+}
+
+.features-title {
+    padding: 0px 216px 50px 216px;
+    text-align: center;
+    color: #4c4c4c;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.features-card-container {
+    width: 992px;
+    height: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center
+}
+
+.features-card {
+    width: 170px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.features-pentagon {
+
+    width: 80px;
+    height: 140px;
+    position: relative;
+    background-color: #576a5f;
+    transform: rotate(90deg);
+    border-radius: 10px /5px;
+}
+
+.features-pentagon::after,
+.features-pentagon::before {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.features-pentagon::after {
+    transform: rotate(60deg);
+}
+
+.features-pentagon::before {
+    transform: rotate(-60deg);
+}
+
+.features-description {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* browser extension section's along with components sections styles */
+
+.browser-extension,
+.components {
+    width: 992px;
+    height: 300px;
+    padding: 100px 120px 0px 120px;
+    margin: 100px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.components {
+    padding: 100px 120px;
+}
+
+.browser-extension::after {
+    content: " ";
+    transform: skewY(-5deg);
+    background-color: #fafafa;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+}
+
+.device-screen,
+.components-screen {
+    width: 280px;
+    height: 226px;
+    background-color: #f8f7ec;
+
+}
+
+.screen-header {
+    width: 250px;
+    padding: 15px;
+    background-color: #e1e0d3;
+    position: relative;
+}
+
+.screen-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.screen-nav li {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #b0bec5;
+    list-style: none;
+    margin-right: 10px;
+}
+
+.screen-header-circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    bottom: -20px;
+    right: 15px;
+    background-color: #13c251;
+}
+
+.screen-body {
+    height: 123px;
+    width: 240px;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.screen-body span:first-child {
+    width: 104px;
+    height: 63px;
+    background-color: #e7e6d8;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+}
+
+.screen-body span {
+    width: 104px;
+    height: 11px;
+    background-color: #e7e6d8;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.browser-extension-section,
+.components-section {
+    width: 420px;
+    padding: 40px 32px;
+    border: 1px solid #d7d7d7;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    padding-bottom: 10px;
+}
+
+.section-description {
+    width: 330px;
+    font-size: 16px;
+    color: #999;
+    line-height: 1.25;
+}
+
+.section-list {
+    padding: 20px 0px 10px 35px;
+    list-style: none;
+}
+
+.section-list li:before {
+    content: " ";
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #9dffbf;
+    position: absolute;
+    left: -30px;
+    top: 8px;
+
+}
+
+.section-list li {
+    position: relative;
+    line-height: 30px;
+}
+
+.section-button {
+    width: 180px;
+    height: 40px;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 2px;
+    border: none;
+    background-color: #ff7500;
+    color: white;
+    float: left;
+}
+
+.section-button:hover {
+    color: white;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.section-button-span {
+    opacity: 0.45;
+}
+
+.review-box,
+.icon-container {
+    padding-left: 32px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-container {
+    margin-top: 30px;
+    float: left;
+}
+
+.review,
+.icon-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    cursor: pointer;
+}
+
+.icon-list {
+    gap: 5px;
+}
+
+.review li {
+    width: 15px;
+    height: 15px;
+    clip-path: polygon(7.5px 0, 9.7px 5px, 15px 5.5px, 10.3px 9.5px, 11.2px 15px, 7.5px 12px, 3.8px 15px, 4.7px 9.5px, 0.3px 5.5px, 5.3px 5px);
+    background-color: #ffcb00;
+}
+
+.review li:last-child {
+    background-image: linear-gradient(to right, #ffcb00 8px, #ececec 6px);
+}
+
+.review-description {
+    width: 146px;
+    height: 17px;
+    font-family: SourceSansPro;
+    font-size: 13px;
+    color: #7f7f7f;
+    line-height: 30px;
+}
+
+.review-description a {
+    text-decoration-color: #7f7f7f;
+    line-height: 0.1px;
+    color: #7f7f7f;
+}
+
+.icon-label {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #b2b2b2;
+}
+
+.print-button {
+    padding: 5px 30px;
+    background-color: #13c251;
+    border: none;
+    color: #fafafa;
+    letter-spacing: 1.2px;
+}
+
+.components-screen-body {
+    height: 130px;
+}
+
+
+/* functionality section, it's title and video*/
+.functionality {
+    width: 1232px;
+    padding-top: 50px;
+    height: 300px;
+    position: relative;
+}
+
+.functionality-title {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+}
+
+.functionality-video {
+    width: 390px;
+    height: 250px;
+    margin: 50px 421px 0px 421px;
+    position: relative;
+}
+
+.functionality-image {
+    width: 390px;
+    height: 250px;
+}
+
+.play-video-button {
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    bottom: 80px;
+    left: 160px;
+    cursor: pointer;
+}
+
+/* footer of the page logo and nav styles*/
+.footer {
+    width: 992px;
+    padding: 141px 120px 32px 120px;
+    background-image: linear-gradient(251deg, #20cd5d 105%, #11bc4e 47%);
+    display: flex;
+}
+
+.footer-logo {
+    flex-grow: 1;
+}
+
+.footer-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+}
